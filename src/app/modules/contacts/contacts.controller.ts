@@ -1,6 +1,7 @@
 import { contactServices } from './contacts.services';
 import CatchAsync from '../../../utlis/CatchAsync';
 import sendResponse from '../../../utlis/sendResponse';
+import { TUserInfo } from './contacts.interface';
 
 //create User Contacts
 const createContact = CatchAsync(async (req, res) => {
@@ -51,8 +52,13 @@ const getSingleContact = CatchAsync(async (req, res) => {
 //-------------------------------------------------------------
 //update User Contact Details
 const updateContact = CatchAsync(async (req, res) => {
+  const id = req.params.id as string;
+  const updateData: Partial<TUserInfo> = req.body;
   //Will Call services Function to send this Data
-  const updatedContactInfo = await contactServices.updateContactFromDb();
+  const updatedContactInfo = await contactServices.updateContactFromDb(
+    id,
+    updateData,
+  );
 
   //Response Send to The Fronted
   sendResponse(res, {

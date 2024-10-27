@@ -54,7 +54,7 @@ const createUserContactsSchema = new Schema<TUserInfo>({
   isDeleted: { type: Boolean, default: false },
 });
 
-//Pre MiddleWare Mongoose apply for this Schema
+//Pre MiddleWare Mongoose
 //When Find Queary Apply
 createUserContactsSchema.pre('find', function (next) {
   this.find({ isDeleted: { $ne: true } });

@@ -15,7 +15,11 @@ router.post(
 );
 
 //Put Request and Validate Request
-router.put('/update-contact/:id', contactController.updateContact);
+router.patch(
+  '/update-contact/:id',
+  ValidateRequest(contactValidationSchema.updateContactValidationSchema),
+  contactController.updateContact,
+);
 
 router.delete('/:id', contactController.deleteContact);
 
