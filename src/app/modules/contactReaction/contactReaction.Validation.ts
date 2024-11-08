@@ -7,8 +7,14 @@ const contactReactionValidation = z.object({
     loved: z.boolean(),
   }),
 });
+const updateReactionValidation = z.object({
+  body: z.object({
+    loved: z.boolean(),
+  }),
+});
 
 //Export Constant Verible
 export const contactReactionValidationSchema = {
   contactReactionValidation,
+  updateReactionValidation,
 };

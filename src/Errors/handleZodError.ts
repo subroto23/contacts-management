@@ -16,7 +16,7 @@ export const handleZodError = (err: ZodError): TGenericError => {
   //Function Return Values
   return {
     statusCode,
-    message: 'Validation Error',
+    message: 'Invalid Inputs',
     errorSource,
   };
 };

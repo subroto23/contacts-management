@@ -14,5 +14,5 @@ router.get('/:id', contactReaction_controller_1.contactReactionController.getSin
 //Post Request and Validate Request
 router.post('/create-contact-reaction', (0, ValidateRequest_1.default)(contactReaction_Validation_1.contactReactionValidationSchema.contactReactionValidation), contactReaction_controller_1.contactReactionController.createReactionContact);
 //Put Request and Validate Request
-router.patch('/update-contact-reaction/:id', (0, ValidateRequest_1.default)(contactReaction_Validation_1.contactReactionValidationSchema.contactReactionValidation), contactReaction_controller_1.contactReactionController.updateContactReaction);
+router.patch('/update-contact-reaction/:id', (0, ValidateRequest_1.default)(contactReaction_Validation_1.contactReactionValidationSchema.updateReactionValidation), contactReaction_controller_1.contactReactionController.updateContactReaction);
 exports.contactReactionRoutes = router;

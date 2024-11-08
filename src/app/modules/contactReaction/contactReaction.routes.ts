@@ -17,7 +17,7 @@ router.post(
 //Put Request and Validate Request
 router.patch(
   '/update-contact-reaction/:id',
-  ValidateRequest(contactReactionValidationSchema.contactReactionValidation),
+  ValidateRequest(contactReactionValidationSchema.updateReactionValidation),
   contactReactionController.updateContactReaction,
 );
 
