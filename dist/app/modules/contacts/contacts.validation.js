@@ -43,7 +43,7 @@ const userAddressValidationSchema = zod_1.z.object({
 const createContactValidationSchema = zod_1.z.object({
     body: zod_1.z.object({
         name: userNameValidationSchema,
-        email: zod_1.z.string().email().optional(),
+        email: zod_1.z.string().optional(),
         phone: zod_1.z
             .string({ required_error: 'Phone Number Is Required' })
             .trim()
